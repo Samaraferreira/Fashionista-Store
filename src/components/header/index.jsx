@@ -11,16 +11,16 @@ export default function Header() {
       </span>
       
       <div className='header-options'>
-        <a href='/'>Camisetas</a>
-        <a href='/'>Vestidos</a>
-        <a href='/'>Calças</a>
+        <a href='/'>Roupas</a>
+        <a href='/'>Acessórios</a>
+        <a href='/'>Calçados</a>
       </div>
 
       <h3>FASHIONISTA</h3>
 
       <div className='header-icons'>
-        <span><BsSearch size={18} /></span>
-        <span><BsBagFill size={24} /></span>
+        <button><BsSearch size={18} /></button>
+        <button><BsBagFill size={24} /></button>
       </div>
     </header>
   );

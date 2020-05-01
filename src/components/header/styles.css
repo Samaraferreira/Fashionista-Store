@@ -1,6 +1,7 @@
 :root {
   --background-header: #000;
   --color-header: #fff;
+  --color-link-hover: #FFD84F;
 }
 
 .header-container, .header-options, .header-icons {
@@ -28,15 +29,21 @@
   color: var(--color-header);
 }
 
-.header-container .header-icons span {
+.header-container .header-options a:hover,
+.header-icons button:hover {
+  color: var(--color-link-hover);
+}
+
+.header-container .header-icons button {
   margin: 0 10px;
+  background: transparent;
 }
 
 .header-options-icon {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .header-container {
     padding: 0 20px;
   }
@@ -45,5 +52,9 @@
   }
   .header-options-icon {
     display: block;
+  }
+  .header-container .header-icons button + button {
+    margin: 0px;
+    padding: 0px;
   }
 }

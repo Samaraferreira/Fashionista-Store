@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/header';
 import Slide from '../../components/slide';
-import CardHome from '../../components/cardHome';
+import List from '../../components/ListProductsHome';
 import Product from '../../components/product';
 
 const products = [
@@ -209,7 +209,7 @@ export default function Home() {
     <div className='home-container'>
       <Header />
       <Slide />
-      <CardHome products={products} />
+      <List products={products} />
     </div>  
   );
 };
