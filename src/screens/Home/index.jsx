@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
-import Header from '../../components/header';
+import React from 'react';
+import TopBar from '../../components/TopBar';
 import Slide from '../../components/slide';
 import List from '../../components/ListProductsHome';
 import Product from '../../components/product';
@@ -207,7 +206,7 @@ export default function Home() {
 
   return (
     <div className='home-container'>
-      <Header />
+      <TopBar />
       <Slide />
       <List products={products} />
     </div>  

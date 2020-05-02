@@ -9,17 +9,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --main-color-text: #FFF;
+  --secondary-color-text: #000;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #141313;
+  color: var(--main-color-text);
 }
 
-button, a, select {
+a {
   font-family: 'Roboto', sans-serif;
+  color: var(--main-color-text);
+  text-decoration: none;
 }
 
-ul, h1, h2, h3 {
+ul, h1, h2 {
   margin: 0;
   padding: 0;
 }
@@ -39,5 +47,9 @@ button {
   text-transform: uppercase;
   
   cursor: pointer;
-  color: #fff;
+}
+
+button:focus {
+  box-shadow: 0;
+  outline: 0;
 }
