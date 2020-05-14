@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../../components/TopBar';
-import Slide from '../../components/slide';
+import Banner from '../../components/Banner';
 import List from '../../components/ListProductsHome';
 import Product from '../../components/product';
 
@@ -207,7 +207,7 @@ export default function Home() {
   return (
     <div className='home-container'>
       <TopBar />
-      <Slide />
+      <Banner />
       <List products={products} />
     </div>  
   );
