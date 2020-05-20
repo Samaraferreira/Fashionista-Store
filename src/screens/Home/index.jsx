@@ -1,8 +1,9 @@
 import React from 'react';
+
 import TopBar from '../../components/TopBar';
 import Banner from '../../components/Banner';
 import List from '../../components/ListProductsHome';
-import Product from '../../components/product';
+import Footer from '../../components/Footer';
 
 const products = [
   {
@@ -209,6 +210,7 @@ export default function Home() {
       <TopBar />
       <Banner />
       <List products={products} />
+      <Footer />
     </div>  
   );
 };

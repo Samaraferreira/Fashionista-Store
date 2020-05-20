@@ -2,11 +2,10 @@ import React from 'react';
 
 import './App.css';
 
-import Home from './screens/Home';
-import Product from './screens/Product';
+import Routes from './routes';
 
 function App() {
-  return <Product />
+  return <Routes />
 }
 
 export default App;

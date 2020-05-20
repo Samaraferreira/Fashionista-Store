@@ -15,21 +15,29 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  outline: 0;
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar-track{
-  background-color: #2a2a2b;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-::-webkit-scrollbar-thumb{
-  background-color: #343a40;
+::-webkit-scrollbar-track {
+  background: #1a1919;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #292828;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  outline: 0;
   background: var(--background-color);
   color: var(--main-color-text);
   -webkit-font-smoothing: antialiased;
@@ -37,6 +45,7 @@ body {
 }
 
 body, button, input {
+  outline: 0;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
@@ -55,4 +64,6 @@ a {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
