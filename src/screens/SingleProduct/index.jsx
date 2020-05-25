@@ -4,31 +4,38 @@ import { BsArrowLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 import actionsProducts from '../../store/actions/Products';
+import actionsCart from '../../store/actions/Cart';
 
 import TopBar from '../../components/TopBar';
 import ProductImage from '../../components/ProductImage';
 
 import './styles.css';
 
-export default function SingleProduct(props) {
+export default function SingleProduct({ match }) {
   const dispatch = useDispatch();
-  const [id,] = useState(parseInt(props.match.params.id))
   const products = useSelector(state => state.productsReducer.data)
-
-  const [selectedSize, setselectedSize] = useState('');
+  const cartError = useSelector(state => state.cartReducer.error)
+  
+  const id = parseInt(match.params.id)
+  const [selectedSize, setSelectedSize] = useState('')
 
   useEffect(() => {
     dispatch(actionsProducts.getProducts())
   }, [])
 
-  function onClickSize(event, size) {
+  function onClickSize(event, sku) {
     event.preventDefault();
-    setselectedSize(size)
+    dispatch(actionsCart.selectSize())
+    setSelectedSize(sku);
   }
 
-  function onClickAdd() {
+  function onClickAdd(product) {
+    const item = { ...product, selectedSize: selectedSize, quantity: 1 }
+    
     if(selectedSize === '')
-      return <p>Selecione um tamanho</p>
+      dispatch(actionsCart.addProductFailure())
+    else
+      dispatch(actionsCart.addProduct(item))
   }
 
   return ( 
@@ -58,17 +65,18 @@ export default function SingleProduct(props) {
                   .map(size => (
                     <button 
                       key={size.sku}
-                      className={`product-size-button ${selectedSize === size.size ? 'selected-size' : ''}`}
-                      onClick={(event) => onClickSize(event, size.size)}
+                      className={`product-size-button ${selectedSize === size.sku ? 'selected-size' : ''}`}
+                      onClick={(event) => onClickSize(event, size.sku)}
                     >
                       {size.size}
                     </button>
                   )
                 )}
+                {cartError && <p style={{ color: 'red' }}>Selecione um tamanho</p>}
               </div>
             </div>
 
-            <button className='btn-submit' type='submit' onClick={onClickAdd}>
+            <button className='btn-submit' onClick={() => onClickAdd(product)}>
               Adicionar à Sacola
             </button>
 

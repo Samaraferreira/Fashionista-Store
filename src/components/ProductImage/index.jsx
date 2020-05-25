@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import ModalImage from '../../components/ModalImage';
 
-import './styles.css';
+// import './styles.css';
 
 export default function ProductImage({ url }) {
   const [show, setShow] = useState(false);

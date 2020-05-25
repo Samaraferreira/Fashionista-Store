@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import actionsCart from '../../store/actions/Cart';
 
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-export default function CartItem({ product, index }) {
-  const [quantity, setQuantity] = useState(1);
+export default function CartItem({ product }) {
+  const dispatch = useDispatch()
+  const [quantity, setQuantity] = useState(1)
 
   function more() {
     setQuantity(() => quantity+1);
@@ -17,13 +20,14 @@ export default function CartItem({ product, index }) {
     setQuantity(() => quantity-1);
   }
 
-  function remove() {
-    
+  function removeProduct(id) {
+    console.log('aa'+id);
+    dispatch(actionsCart.removeProduct(id))
   }
 
   return (
     <li className='product-content'>
-      <Link to={`/product/${index}`}>
+      <Link to={`/product/${product.id}`}>
         <img src={product.image} />
       </Link>
 
@@ -39,9 +43,7 @@ export default function CartItem({ product, index }) {
         </div>
       </div>
 
-      
-
-      <button className='product-remove'>
+      <button className='product-remove' onClick={() => removeProduct(product.id)}>
         <AiOutlineCloseCircle size={24} color='#fff' />
       </button>
     </li>

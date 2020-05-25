@@ -1,11 +1,13 @@
 .list-home-container {
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   text-align: center;
 }
 
 .list-home-container h2 {
-  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 1.3em;
+  margin-bottom: 25px;
 }
 
 .list-home-list {
@@ -17,10 +19,7 @@
 
 .list-home-container .list-home-list li {
   max-width: 300px;
-  margin-bottom: 15px;
-}
-
-.list-home-container .list-home-list li:hover {
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
@@ -85,13 +84,9 @@
   font-size: 16px;
 }
 
-.list-home-list-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px;
-  z-index: 1;
-
-  display: none;
+@media screen and (max-width: 390px) {
+  .list-home-container .list-home-list li {
+    width: 400px;
+  }
 }
+

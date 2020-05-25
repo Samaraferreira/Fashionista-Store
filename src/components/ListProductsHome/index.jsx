@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import actions from '../../store/actions/Products';
 
+import Loading from '../Loading';
 import './styles.css';
 
 export default function ListProductsHome() {
@@ -16,13 +17,16 @@ export default function ListProductsHome() {
 
   return (
     <section className='list-home-container'>
-      <h2>Mais vistos</h2>
+      <h2>MODA FEMININA</h2>
       <ul className='list-home-list'>
-        {products.loading ? 'loading' : (products.data.map((item) => (
+        {products.loading ? (<Loading />) : (products.data.map((item) => (
           <Link to={`/product/${item.id}`}>
             <li>
               <div className='list-home-image'>
-                <img src={item.image} alt='Imagem Indisponível' />
+                {item.image 
+                  ? <img src={item.image} alt={item.name} /> 
+                  : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt={item.name} />
+                }
                 {item.on_sale ? <div className='list-home-sale'>{item.discount_percentage} off</div> : null}
                 <button>Ver produto</button>
               </div>
@@ -33,14 +37,6 @@ export default function ListProductsHome() {
                 <span>{item.actual_price}</span> 
               </div>
               
-              <div className='list-home-list-buttons'>
-                <button>
-                  Ver produto
-                </button>
-                <button>
-                  Comprar
-                </button>
-              </div>
             </li>
           </Link>
         )))}

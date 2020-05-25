@@ -6,6 +6,12 @@
   margin-top: 3%;
 }
 
+.product-container img {
+  min-width: 40%;
+  max-height: 500px;
+  cursor: pointer;
+}
+
 .product-group {
   display: flex;
   flex-direction: column;
