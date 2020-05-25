@@ -28,8 +28,7 @@ const reducers = (state = INITIAL_STATE, action) => {
       return { ...state, error: true };
 
     case actionsTypes.REMOVE_PRODUCT:
-      const updatedList = state.items.filter(item => item.id !== action.payload)
-      console.log(updatedList)
+      const updatedList = state.items.filter(item => item.selectedSize !== action.payload)
       const updatedCounter = countQuantity(updatedList)
       state.cart = { 'counter': updatedCounter, 'items': updatedList}
       StorageService.set('CartList', state.cart)

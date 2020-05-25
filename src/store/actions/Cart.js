@@ -22,9 +22,9 @@ const actions = {
     type: actionsTypes.DECREMENT_QUANTITY_PRODUCT,
     payload: id
   }),
-  removeProduct: (id) => ({
+  removeProduct: (sku) => ({
     type: actionsTypes.REMOVE_PRODUCT,
-    payload: id
+    payload: sku
   }),
 }
 
