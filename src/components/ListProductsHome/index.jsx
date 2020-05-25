@@ -21,7 +21,7 @@ export default function ListProductsHome() {
       <ul className='list-home-list'>
         {products.loading ? (<Loading />) : (products.data.map((item) => (
           <Link to={`/product/${item.id}`}>
-            <li>
+            <li key={item.id}>
               <div className='list-home-image'>
                 {item.image 
                   ? <img src={item.image} alt={item.name} /> 

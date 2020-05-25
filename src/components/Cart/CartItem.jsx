@@ -20,9 +20,8 @@ export default function CartItem({ product }) {
     setQuantity(() => quantity-1);
   }
 
-  function removeProduct(id) {
-    console.log('aa'+id);
-    dispatch(actionsCart.removeProduct(id))
+  function removeProduct(sku) {
+    dispatch(actionsCart.removeProduct(sku))
   }
 
   return (
@@ -43,7 +42,7 @@ export default function CartItem({ product }) {
         </div>
       </div>
 
-      <button className='product-remove' onClick={() => removeProduct(product.id)}>
+      <button className='product-remove' onClick={() => removeProduct(product.selectedSize)}>
         <AiOutlineCloseCircle size={24} color='#fff' />
       </button>
     </li>

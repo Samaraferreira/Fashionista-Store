@@ -1,6 +1,8 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
+import Drawer from '../../containers/Drawer';
+
 import './styles.css';
 
 export default function ModalImage({ url, show, setShow }) {
@@ -15,17 +17,19 @@ export default function ModalImage({ url, show, setShow }) {
   return (
     <>
       {show && 
-        <section className='modal-container'>
-          <div className='modal-image'>
-            {url ? 
-              <img src={url} alt='Foto do produto' /> 
-              : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt='Foto do produto' />
-            }
-            <button onClick={closeModal} className='modal-close'>
-              <AiOutlineClose size={18} color='#000' />
-            </button>
+        <Drawer>
+          <div className='modal-container'>
+            <div className='modal-image'>
+              {url ? 
+                <img src={url} alt='Foto do produto' /> 
+                : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt='Foto do produto' />
+              }
+              <button onClick={closeModal} className='modal-close'>
+                <AiOutlineClose size={18} color='#000' />
+              </button>
+            </div>
           </div>
-        </section>
+        </Drawer>
       }
     </>
   )
