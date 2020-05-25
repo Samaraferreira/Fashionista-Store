@@ -1,8 +1,8 @@
 .banner-container {
   width: 100%;
   min-height: 85vh;
-  background: #000;
-  /* background: #000 url('../../assets/large.jpg') no-repeat; */
+  /* background: #000; */
+  background: #000 url('../../assets/large.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -53,6 +53,6 @@
 @media (max-width: 728px) {
   .banner-container {
     min-height: 50vh;
-    /* background-image: url('../../assets/medium.jpg'); */
+    background-image: url('../../assets/medium.jpg');
   }
 }
