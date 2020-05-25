@@ -5,7 +5,7 @@ export default function Price(products) {
 
   products.map((product) => {
     const price = parseStringToFloat(product.actual_price)
-    prices.push(price)
+    prices.push(price*product.quantity)
   })
 
   const totalPrice = prices.reduce((sum, price) => sum + price, 0)
