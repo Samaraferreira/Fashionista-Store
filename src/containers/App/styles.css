@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+  --background-color: #131313;
+  --background-secondary: #F84810;
+  --background-bar: #000;
+  --background-bar-header: rgb(10, 10, 10);
+  --background-button: #F84810;
+
+  --main-color-text: #FFF;
+  --secondary-color-text: #000;
+
+  --color-list-label: #c8c8c8;
+  --background-list-list: rgba(230, 230, 230, 0.657);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1919;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #292828;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  background: var(--background-color);
+  color: var(--main-color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, button, input {
+  outline: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+button {
+  border: 0;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+a {
+  color: var(--main-color-text);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
