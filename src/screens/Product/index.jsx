@@ -5,17 +5,14 @@ import { Link } from 'react-router-dom';
 
 import actionsProducts from '../../store/actions/Products';
 import actionsCart from '../../store/actions/Cart';
-
 import TopBar from '../../components/TopBar';
 import ProductImage from '../../components/ProductImage';
-
 import './styles.css';
 
-export default function SingleProduct({ match }) {
+export default function Product({ match }) {
   const dispatch = useDispatch();
   const products = useSelector(state => state.productsReducer.data)
   const cartError = useSelector(state => state.cartReducer.error)
-  
   const id = parseInt(match.params.id)
   const [selectedSize, setSelectedSize] = useState('')
 
@@ -31,7 +28,6 @@ export default function SingleProduct({ match }) {
 
   function onClickAdd(product) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 }
-    
     if(selectedSize === '')
       dispatch(actionsCart.addProductFailure())
     else
