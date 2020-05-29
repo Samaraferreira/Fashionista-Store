@@ -2,7 +2,7 @@
 
 :root {
   --background-color: #131313;
-  --background-secondary: #F84810;
+  --background-secondary: rgb(255, 60, 0);
   --background-bar: #000;
   --background-bar-header: rgb(10, 10, 10);
   --background-button: #F84810;

@@ -11,6 +11,16 @@ const actions = {
   getProductsFailure: () => ({
     type: actionsTypes.FAILURE_PRODUCTS,
   }),
+  searchProducts: () => ({
+    type: actionsTypes.SEARCH_PRODUCTS,
+  }),
+  searchProductsSuccess: (name) => ({
+    type: actionsTypes.SUCCESS_SEARCH_PRODUCTS,
+    payload: name
+  }),
+  searchProductsFailure: () => ({
+    type: actionsTypes.FAILURE_SEARCH_PRODUCTS,
+  }),
 }
 
 export default actions;
