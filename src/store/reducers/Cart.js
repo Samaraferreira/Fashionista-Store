@@ -27,6 +27,12 @@ const reducers = (state = INITIAL_STATE, action) => {
     case actionsTypes.ADD_PRODUCT_FAILURE:
       return { ...state, error: true };
 
+    // case actionsTypes.INCREMENT_QUANTITY_PRODUCT:
+    //   const newItems = state.items.map(item => { if(item.selectedSize === action.payload) (item.quantity + 1)})
+    //   state.cart = { 'counter': (state.counter + 1), 'items': newItems}
+    //   StorageService.set('CartList', state.cart)
+    //   return { ...state, counter: (state.counter + 1), items: newItems, error: true };
+
     case actionsTypes.REMOVE_PRODUCT:
       const updatedList = state.items.filter(item => item.selectedSize !== action.payload)
       const updatedCounter = countQuantity(updatedList)

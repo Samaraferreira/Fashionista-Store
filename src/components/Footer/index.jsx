@@ -11,7 +11,7 @@ export default function Footer() {
 
       <div>
         {/* colocar repositorio */}
-        <a href='https://github.com/samaraferreira' target='_blank'>
+        <a href='https://github.com/Samaraferreira/Fashionista-Store' target='_blank'>
           <AiOutlineGithub size={24} />
         </a>
 

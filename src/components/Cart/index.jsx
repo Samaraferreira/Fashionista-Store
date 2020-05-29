@@ -60,7 +60,7 @@ export default function Cart() {
                   ))
                   : <p>Sacola Vazia</p>
                 }
-              </ul>
+              </ul> 
 
               <div className='cart__infos'>
                 <div className='info__content'>
