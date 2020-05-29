@@ -1,40 +1,40 @@
-.list-home-container {
+.list-home {
   margin: 10px;
   padding: 20px;
   text-align: center;
 }
 
-.list-home-container h2 {
+.list-home__title {
   font-weight: 500;
   font-size: 1.3em;
   margin-bottom: 25px;
 }
 
-.list-home-list {
+.list-home__items {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   position: relative;
 }
 
-.list-home-container .list-home-list li {
+.item {
   max-width: 300px;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.list-home-list .list-home-image {
+.item__box-image {
   position: relative;
 }
 
-.list-home-list .list-home-image img {
+.item__image {
   width: 100%;
   height: auto;
   /* max-height: 400px; */
   transition: all .8s;
 }
 
-.list-home-list .list-home-image button {
+.item__btn-see {
   display: none;
   position: absolute;
   top: 50%;
@@ -46,15 +46,15 @@
   border: 1px solid rgb(255, 255, 255);
 }
 
-.list-home-list .list-home-image:hover img {
+.item__box-image:hover .item__image {
   opacity: 0.7;
 }
 
-.list-home-list .list-home-image:hover button {
+.item__box-image:hover .item__btn-see {
   display: block;
 }
 
-.list-home-sale {
+.item__sale {
   padding: 2px 6px;
   color: #000;
   background: rgb(255, 94, 20);
@@ -62,30 +62,31 @@
   top: 0;
 }
 
-.list-home-container .list-home-info {
+.item__info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.list-home-container .list-home-info h3 {
+.item__name {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   margin: 5px 0;
 }
 
-.list-home-container .list-home-info label {
+.item__price--sale {
   font-size: 14px;
   text-decoration: line-through;
   color: rgb(255, 94, 20);
 }
 
-.list-home-container .list-home-info span {
-  font-size: 16px;
+.item__price {
+  font-size: 15px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 390px) {
-  .list-home-container .list-home-list li {
+  .item {
     width: 400px;
   }
 }

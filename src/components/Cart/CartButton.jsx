@@ -1,15 +1,12 @@
 import React from 'react';
 
-export default function CartItem() {
-  const selected = false;
-
-  function loading() {
-    
-  }
+const button = () => { 
 
   return (
-    <button className={`cartButton ${selected ? "active" : "" }`}>
-      
+    <button className='cart__btn-complete' onClick={null}>
+      Fechar pedido
     </button>
   )
 }
+
+export default button;

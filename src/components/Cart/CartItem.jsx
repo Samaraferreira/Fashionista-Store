@@ -9,11 +9,11 @@ export default function CartItem({ product }) {
   const dispatch = useDispatch()
   const [quantity, setQuantity] = useState(1)
 
-  function more() {
+  function increment() {
     setQuantity(() => quantity+1);
   }
 
-  function less() {
+  function decrement() {
     if(quantity === 1) {
       return
     }
@@ -25,24 +25,26 @@ export default function CartItem({ product }) {
   }
 
   return (
-    <li className='product-content'>
+    <li className='cart-item'>
       <Link to={`/product/${product.id}`}>
-        <img src={product.image} />
+        <img className='cart-item__image' src={product.image} />
       </Link>
 
-      <div className='product-text'>
-        <label>{product.name}</label>
-        <label>Tamanho: {product.sizeSelected}</label>
-        <label>Unidade: {product.actual_price}</label>
+      <div className='cart-item__infos'>
+        <label className='cart-item__text'>{product.name}</label>
+        <label className='cart-item__text'>Tamanho: {product.sizeSelected}</label>
+        <label className='cart-item__text'>Unidade: {product.actual_price}</label>
 
-        <div className='product-quantity'>
-          <button onClick={more}>+</button>
-            <label>{quantity}</label>
-          <button onClick={less}>-</button>
+        <div className='cart-item__quantity'>
+          <button className='cart-item__btn-increment' onClick={increment}>+</button>
+          <label className='cart-item__text'>{quantity}</label>
+          <button className='cart-item__btn-decrement' onClick={decrement}>-</button>
         </div>
       </div>
 
-      <button className='product-remove' onClick={() => removeProduct(product.selectedSize)}>
+      <button className='cart-item__btn-remove' 
+        onClick={() => removeProduct(product.selectedSize)}
+      >
         <AiOutlineCloseCircle size={24} color='#fff' />
       </button>
     </li>

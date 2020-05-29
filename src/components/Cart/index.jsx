@@ -9,7 +9,7 @@ import CartItem from './CartItem';
 import Button from './CartButton';
 
 import CountTotalPrice from '../../utils/countPrice';
-
+ 
 import './styles.css';
 
 export default function Cart() {
@@ -32,25 +32,28 @@ export default function Cart() {
 
   return (
     <>
-      <button className='cart-icon' onClick={openCart}>
+      <button 
+        className='cart__btn-icon' 
+        onClick={openCart}
+      >
         <BsBagFill size={24} />
-        <sup>
+        <sup className='cart__counter'>
           {<span>{cartCounter}</span>}
         </sup>
       </button>
 
       {showCart && (
         <Drawer>
-          <div className='cart-container'>
-            <div className='cart-header'>
-              <button onClick={openCart}>
+          <div className='cart'>
+            <div className='cart__header'>
+              <button className='cart__btn-close' onClick={openCart}>
                 <AiOutlineClose size={18} color='#fff' />
               </button>
-              <h3>Sua sacola</h3>
+              <h3 className='cart__title'>Sua sacola</h3>
             </div>
 
-            <div className='cart-content'> 
-              <ul className='cart-products'>
+            <div className='cart__content'> 
+              <ul className='cart__products'>
                 {cartCounter > 0 ? 
                   cartItems.map((product, index) => (
                     <CartItem key={index} product={product} />
@@ -59,31 +62,28 @@ export default function Cart() {
                 }
               </ul>
 
-              <div className='cart-infos'>
-                <div className='info-content'>
+              <div className='cart__infos'>
+                <div className='info__content'>
                   <label>Subtotal</label>
                   <label>R$ { CountTotalPrice(cartItems) }</label>
                 </div>
 
-                <div className='info-content'>
+                <div className='info__content'>
                   <label>Frete</label>
                   <label>Grátis</label>
                 </div>
 
-                <div className='info-content'>
-                  <strong>Total</strong>
-                  <strong>R$ { CountTotalPrice(cartItems) }</strong>
+                <div className='info__content'>
+                  <strong className='info__text--color'>Total</strong>
+                  <strong className='info__text--color'>R$ { CountTotalPrice(cartItems) }</strong>
                 </div>
                   
-                <button>
-                  Fechar pedido
-                </button>
+                <Button />
               </div>
             </div>
           </div>
         </Drawer>
       )}
-      
     </>
   )
 }

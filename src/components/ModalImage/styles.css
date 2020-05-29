@@ -1,4 +1,4 @@
-.modal-container {
+.modal {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -12,15 +12,15 @@
   transition: all .6s;
 }
 
-.modal-image {
+.modal__image {
   position: relative;
 }
 
-.modal-image img {
+.modal__image img {
   width: 450px;
 }
 
-.modal-close {
+.modal__close {
   position: absolute;
   top: 0;
   left: 0;

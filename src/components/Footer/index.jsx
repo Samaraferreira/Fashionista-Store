@@ -5,9 +5,9 @@ import './styles.css';
 
 export default function Footer() {
   return (
-    <section className='footer-container'>
+    <section className='footer'>
       <h3>FASHIONISTA</h3>
-      <h5>Desenvolvido por Samara Ferreira</h5>
+      <h5 className='footer__text'>Desenvolvido por Samara Ferreira</h5>
 
       <div>
         {/* colocar repositorio */}
