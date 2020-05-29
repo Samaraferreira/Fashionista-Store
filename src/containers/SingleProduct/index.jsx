@@ -27,29 +27,29 @@ export default function SingleProduct({ product }) {
   }
 
   return (
-    <div className='product-container'>
+    <div className='product'>
       <ProductImage url={product.image} />
       
-      <div className='product-group'>
-        <div className='product-info'>
-          <h3 className='product-name'>{product.name}</h3>
+      <div className='product__group'>
+        <div className='product__info'>
+          <h3 className='info__name'>{product.name}</h3>
 
-          <div className='product-price'>
+          <div className='info__price'>
             {product.on_sale && 
               <label className='price-regular'>{product.regular_price}</label>
             }
-            <strong className='price-actual'>{product.actual_price}</strong> 
+            <strong className='price__actual'>{product.actual_price}</strong> 
             <br/>
-            <label className='price-installments'>Em até {product.installments}</label>
+            <label className='price__installments'>Em até {product.installments}</label>
           </div>
 
-          <div className='product-size'>
+          <div className='product__size'>
             {product.sizes
               .filter(item => item.available === true)
               .map(size => (
                 <button 
                   key={size.sku}
-                  className={`product-size-button ${selectedSize === size.sku ? 'selected-size' : ''}`}
+                  className={`size__btn ${selectedSize === size.sku ? 'size__btn--selected' : ''}`}
                   onClick={(event) => onClickSize(event, size.sku)}
                 >
                   {size.size}
@@ -60,11 +60,11 @@ export default function SingleProduct({ product }) {
           </div>
         </div>
 
-        <button className='btn-submit' onClick={() => onClickAdd(product)}>
+        <button className='btn-submit btn-submit--hover' onClick={() => onClickAdd(product)}>
           Adicionar à Sacola
         </button>
 
-        <Link to='/' className='link-back'>
+        <Link to='/' className='link-back link-back--hover'>
           <BsArrowLeft size={24} />
           Voltar para a home
         </Link>

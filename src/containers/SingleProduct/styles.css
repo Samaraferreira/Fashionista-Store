@@ -1,4 +1,4 @@
-.product-container {
+.product {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,49 +6,49 @@
   margin-top: 3%;
 }
 
-.product-container img {
+.product img {
   min-width: 40%;
   max-height: 500px;
   cursor: pointer;
 }
 
-.product-group {
+.product__group {
   display: flex;
   flex-direction: column;
   margin: 10px 40px;
 }
 
-.product-info {
+.product__info {
   text-align: center;
 }
 
-.product-info .product-name {
+.product__info .info__name {
   font-weight: 500;
   font-size: 18px;
 }
 
-.product-price .price-regular {
+.info__price .price-regular {
   font-weight: 400;
   font-size: 14px;
   text-decoration: line-through;
   color: var(--color-list-label);
 }
 
-.product-price .price-actual {
+.info__price .price__actual {
   margin-left: 5px;
   font-weight: 400;
 }
 
-.product-price .price-installments {
+.info__price .price__installments {
   font-size: 14px;
   color: rgb(240, 67, 14);
 }
 
-.product-size {
+.product__size {
   margin: 12px 0;
 }
 
-.product-size .product-size-button {
+.product__size .size__btn {
   background: var(--background-color);
   width: 30px;
   height: 30px;
@@ -59,7 +59,11 @@
   box-shadow: 2px 2px 2px #1d1d1d;
 }
 
-.product-group .btn-submit {
+.product__size .size__btn--selected {
+  background: rgb(240, 67, 14);
+}
+
+.product__group .btn-submit {
   min-width: 350px;
   height: 50px;
   font-size: 14px;
@@ -72,35 +76,32 @@
   transition: opacity 0.2s;
 }
 
-.product-group .btn-submit:hover {
+.product__group .btn-submit--hover:hover {
   opacity: 0.8;
 }
 
-.link-back {
+.product__group .link-back {
   display: flex;
   align-items: center;
   font-size: 14px;
   margin-top: 20px;
 }
 
-.link-back:hover {
+.product__group .link-back--hover:hover {
   color: rgb(180, 180, 180);
 }
 
 @media screen and (max-width: 820px) {
-  .product-container {
+  .product {
     flex-direction: column;
     margin: 0;
   }
-  .product-container img {
-    max-width: 100%;
+  .product img {
+    width: 100%;
   }
-  .product-group {
+  .product__group {
     margin: 5px 0px;
     align-items: center;
   }
 }
 
-.product-size .selected-size {
-  background: rgb(240, 67, 14);
-}

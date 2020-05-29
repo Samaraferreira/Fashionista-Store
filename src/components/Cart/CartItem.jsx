@@ -23,7 +23,13 @@ export default function CartItem({ product }) {
   }
 
   function removeProduct(sku) {
-    dispatch(actionsCart.removeProduct(sku))
+    dispatch(actionsCart.removeProduct(sku));
+  }
+
+  function filterSize(sizes) {
+    const filteredSizes = sizes.filter(size => size.sku === product.selectedSize);
+    
+    return filteredSizes.map(size => size.size);
   }
 
   return (
@@ -34,7 +40,7 @@ export default function CartItem({ product }) {
 
       <div className='cart-item__infos'>
         <label className='cart-item__text'>{product.name}</label>
-        <label className='cart-item__text'>Tamanho: {product.sizeSelected}</label>
+       <label className='cart-item__text'>Tamanho: {filterSize(product.sizes)}</label>
         <label className='cart-item__text'>Unidade: {product.actual_price}</label>
 
         <div className='cart-item__quantity'>
