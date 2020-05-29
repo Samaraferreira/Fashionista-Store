@@ -26,7 +26,8 @@ export default function Search() {
 
   function handleProducts(event) {
     event.preventDefault();
-    setValue(event.target.value);
+    const string = event.target.value;
+    setValue(string.toLowerCase());
   }
 
   function handleSearch() {
@@ -73,7 +74,7 @@ export default function Search() {
             <div className='search__products'>
               <ul>
                 {results && results.map(item => (
-                  <li key={item.id}>
+                  <li key={item.id} onClick={handleSearch}>
                     <Product product={item} />
                   </li>
                 ))}
