@@ -9,7 +9,8 @@ export default function ProductSearch({ product }) {
       <div className='product-search__container'>
         {product.image 
           ? <img src={product.image} alt={product.name} /> 
-          : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt={product.name} />}
+          : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt={product.name} />
+        }
         <div className='product__infos'>
           <strong>{product.name}</strong>
           <label>{product.actual_price}</label>

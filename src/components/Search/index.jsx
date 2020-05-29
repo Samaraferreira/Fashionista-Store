@@ -33,6 +33,7 @@ export default function Search() {
     if(showSearch) {
       toggleShowSearch(false);
       setValue('');
+      setResults([]);
     } else {
       toggleShowSearch(true)
     }
