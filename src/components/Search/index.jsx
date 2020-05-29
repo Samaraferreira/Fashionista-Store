@@ -52,7 +52,7 @@ export default function Search() {
         <Drawer>
           <section className='search'>
             <div className='search__header'>
-              <h3>Encontre o que procura</h3>
+              <h3>Buscar Produtos</h3>
               <button className='search__btn-icon' onClick={handleSearch}>
                 <AiOutlineClose size={18} color='#fff' />
               </button>
@@ -72,7 +72,7 @@ export default function Search() {
             
             <div className='search__products'>
               <ul>
-                {results?.map(item => (
+                {results && results.map(item => (
                   <li key={item.id}>
                     <Product product={item} />
                   </li>
