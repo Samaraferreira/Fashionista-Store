@@ -61,7 +61,8 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-  height: calc(100vh - 65px);
+  overflow-x: hidden;
+  height: calc(100vh - 180px);
 }
 
 .cart__products {
@@ -69,6 +70,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 5px;
 }
 
 /* || CartItem */
@@ -91,7 +93,7 @@
 .cart-item__infos {
   display: flex;
   flex-direction: column;
-  margin: 0 15px;
+  margin-left: 15px;
   min-width: 200px;
 }
 
@@ -124,6 +126,7 @@
 }
 
 .cart-item__btn-remove {
+  padding: 0;
   background: transparent; 
 }
 

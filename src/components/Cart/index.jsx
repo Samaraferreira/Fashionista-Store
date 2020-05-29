@@ -63,15 +63,15 @@ export default function Cart() {
               </ul> 
 
               <div className='cart__infos'>
-                <div className='info__content'>
+                {/* <div className='info__content'>
                   <label>Subtotal</label>
                   <label>R$ { CountTotalPrice(cartItems) }</label>
-                </div>
+                </div> */}
 
-                <div className='info__content'>
+                {/* <div className='info__content'>
                   <label>Frete</label>
                   <label>Grátis</label>
-                </div>
+                </div> */}
 
                 <div className='info__content'>
                   <strong className='info__text--color'>Total</strong>
