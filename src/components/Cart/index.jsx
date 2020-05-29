@@ -49,7 +49,7 @@ export default function Cart() {
               <button className='cart__btn-close' onClick={openCart}>
                 <AiOutlineClose size={18} color='#fff' />
               </button>
-              <h3 className='cart__title'>Sua sacola</h3>
+              <h3 className='cart__title'>Sua sacola ({cartCounter})</h3>
             </div>
 
             <div className='cart__content'> 

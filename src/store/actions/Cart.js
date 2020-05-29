@@ -14,13 +14,13 @@ const actions = {
   addProductFailure: () => ({
     type: actionsTypes.ADD_PRODUCT_FAILURE,
   }),
-  incrementQuantityProduct: (id) => ({
+  incrementQuantityProduct: (sku) => ({
     type: actionsTypes.INCREMENT_QUANTITY_PRODUCT,
-    payload: id
+    payload: sku
   }),
-  decrementQuantityProduct: (id) => ({
+  decrementQuantityProduct: (sku) => ({
     type: actionsTypes.DECREMENT_QUANTITY_PRODUCT,
-    payload: id
+    payload: sku
   }),
   removeProduct: (sku) => ({
     type: actionsTypes.REMOVE_PRODUCT,

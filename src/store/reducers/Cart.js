@@ -18,20 +18,36 @@ const reducers = (state = INITIAL_STATE, action) => {
       return { ...state, error: false };
 
     case actionsTypes.ADD_PRODUCT:
-      const newList = checkSize(state, action)
-      const count = countQuantity(newList)
-      state.cart = { 'counter': count, 'items': newList}
-      StorageService.set('CartList', state.cart)
-      return { ...state, counter: count, items: newList, error: false }
+      const newList = checkSize(state, action);
+      const count = countQuantity(newList);
+      state.cart = { 'counter': count, 'items': newList};
+      StorageService.set('CartList', state.cart);
+      return { ...state, counter: count, items: newList, error: false };
 
     case actionsTypes.ADD_PRODUCT_FAILURE:
       return { ...state, error: true };
 
-    // case actionsTypes.INCREMENT_QUANTITY_PRODUCT:
-    //   const newItems = state.items.map(item => { if(item.selectedSize === action.payload) (item.quantity + 1)})
-    //   state.cart = { 'counter': (state.counter + 1), 'items': newItems}
-    //   StorageService.set('CartList', state.cart)
-    //   return { ...state, counter: (state.counter + 1), items: newItems, error: true };
+    case actionsTypes.INCREMENT_QUANTITY_PRODUCT:
+      const incrementItems = state.items.map(item => {
+          if(item.selectedSize === action.payload) 
+            item.quantity+=1
+          return item
+        });
+      const incrementCount = countQuantity(incrementItems)
+      state.cart = { 'counter': incrementCount, 'items': incrementItems};
+      StorageService.set('CartList', state.cart);
+      return { ...state, counter: incrementCount, items: incrementItems, error: false };
+    
+    case actionsTypes.DECREMENT_QUANTITY_PRODUCT:
+      const decrementItems = state.items.map(item => {
+          if(item.selectedSize === action.payload && item.quantity > 1) 
+            item.quantity-=1
+          return item
+        });
+      const decrementCount = countQuantity(decrementItems)
+      state.cart = { 'counter': decrementCount, 'items': decrementItems};
+      StorageService.set('CartList', state.cart);
+      return { ...state, counter: decrementCount, items: decrementItems, error: false };
 
     case actionsTypes.REMOVE_PRODUCT:
       const updatedList = state.items.filter(item => item.selectedSize !== action.payload)

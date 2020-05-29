@@ -7,19 +7,13 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export default function CartItem({ product }) {
   const dispatch = useDispatch()
-  const [quantity, setQuantity] = useState(1)
 
   function increment(sku) {
-    setQuantity(() => quantity+1);
-    // dispatch(actionsCart.incrementQuantityProduct(sku))
+    dispatch(actionsCart.incrementQuantityProduct(sku))
   }
 
   function decrement(sku) {
-    if(quantity === 1) {
-      return
-    }
-    setQuantity(() => quantity-1);
-    // dispatch(actionsCart.decrementQuantityProduct(sku))
+    dispatch(actionsCart.decrementQuantityProduct(sku))
   }
 
   function removeProduct(sku) {
@@ -44,9 +38,9 @@ export default function CartItem({ product }) {
         <label className='cart-item__text'>Unidade: {product.actual_price}</label>
 
         <div className='cart-item__quantity'>
-          <button className='cart-item__btn-increment' onClick={() => increment(product.sku)}>+</button>
-          <label className='cart-item__text'>{quantity}</label>
-          <button className='cart-item__btn-decrement' onClick={() => decrement(product.sku)}>-</button>
+          <button className='cart-item__btn-increment' onClick={() => increment(product.selectedSize)}>+</button>
+          <label className='cart-item__text'>{product.quantity}</label>
+          <button className='cart-item__btn-decrement' onClick={() => decrement(product.selectedSize)}>-</button>
         </div>
       </div>
 
