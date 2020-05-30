@@ -1,12 +1,12 @@
 import React from 'react';
 
-const button = () => { 
+function Button({ handleCheck }) { 
 
   return (
-    <button className='cart__btn-complete' onClick={null}>
+    <button className='cart__btn-complete' onClick={handleCheck}>
       Fechar pedido
     </button>
   )
 }
 
-export default button;
+export default Button;

@@ -3,31 +3,40 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsBagFill } from 'react-icons/bs';
 
+import actionsToast from '../../store/actions/Toast';
 import actionsCart from '../../store/actions/Cart';
 import Drawer from '../../containers/Drawer';
 import CartItem from './CartItem';
 import Button from './CartButton';
-
+import Toast from '../../components/Toast';
 import CountTotalPrice from '../../utils/countPrice';
  
 import './styles.css';
 
 export default function Cart() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [showCart, setShowCart] = useState(false);
-  const cartItems = useSelector(state => state.cartReducer.items)
-  const cartCounter = useSelector(state => state.cartReducer.counter)
+  const cartItems = useSelector(state => state.cartReducer.items);
+  const cartCounter = useSelector(state => state.cartReducer.counter);
 
   useEffect(() => {
-    dispatch(actionsCart.getCart())
-  }, [])
+    dispatch(actionsCart.getCart());
+  }, []);
 
   function openCart() {
-    if(showCart) {
+    if(showCart) 
       setShowCart(false);
-    } else {
-      setShowCart(true)
+    else 
+      setShowCart(true);
+  }
+
+  function handleCheck() {
+    if(cartCounter > 0) {
+      dispatch(actionsCart.cleanCart());
+      dispatch(actionsToast.addToast('YAY! Compra finalizada.', false));
     }
+    else 
+      dispatch(actionsToast.addToast('OOPS! Sacola Vazia.', true));
   }
 
   return (
@@ -63,27 +72,18 @@ export default function Cart() {
               </ul> 
 
               <div className='cart__infos'>
-                {/* <div className='info__content'>
-                  <label>Subtotal</label>
-                  <label>R$ { CountTotalPrice(cartItems) }</label>
-                </div> */}
-
-                {/* <div className='info__content'>
-                  <label>Frete</label>
-                  <label>Grátis</label>
-                </div> */}
-
                 <div className='info__content'>
                   <strong className='info__text--color'>Total</strong>
                   <strong className='info__text--color'>R$ { CountTotalPrice(cartItems) }</strong>
                 </div>
                   
-                <Button />
+                <Button handleCheck={handleCheck} />
               </div>
             </div>
           </div>
         </Drawer>
       )}
+      <Toast />
     </>
   )
 }

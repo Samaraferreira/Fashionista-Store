@@ -4,7 +4,10 @@ import { BsArrowLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 import actionsCart from '../../store/actions/Cart';
+import actionsToast from '../../store/actions/Toast';
 import ProductImage from '../../components/ProductImage';
+import Toast from '../../components/Toast';
+
 import './styles.css'
 
 export default function SingleProduct({ product }) {
@@ -19,11 +22,13 @@ export default function SingleProduct({ product }) {
   }
 
   function onClickAdd(product) {
-    const item = { ...product, selectedSize: selectedSize, quantity: 1 }
+    const item = { ...product, selectedSize: selectedSize, quantity: 1 };
     if(selectedSize === '')
-      dispatch(actionsCart.addProductFailure())
-    else
-      dispatch(actionsCart.addProduct(item))
+      dispatch(actionsCart.addProductFailure());
+    else {
+      dispatch(actionsCart.addProduct(item));
+      dispatch(actionsToast.addToast('Adicionado ao carrinho', false));
+    }
   }
 
   return (
@@ -69,6 +74,7 @@ export default function SingleProduct({ product }) {
           Voltar para a home
         </Link>
       </div>
+      <Toast />
     </div>
   )
 }

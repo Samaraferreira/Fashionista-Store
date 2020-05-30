@@ -18,9 +18,6 @@ const actions = {
     type: actionsTypes.SUCCESS_SEARCH_PRODUCTS,
     payload: name
   }),
-  searchProductsFailure: () => ({
-    type: actionsTypes.FAILURE_SEARCH_PRODUCTS,
-  }),
 }
 
 export default actions;
