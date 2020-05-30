@@ -30,7 +30,6 @@
 .item__image {
   width: 100%;
   height: auto;
-  /* max-height: 400px; */
   transition: all .8s;
 }
 

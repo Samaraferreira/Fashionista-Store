@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-:root {
-  --background-color: #131313;
-  --background-secondary: rgb(255, 60, 0);
-  --background-bar: #000;
-  --background-bar-header: rgb(10, 10, 10);
-  --background-button: #F84810;
-
-  --main-color-text: #FFF;
-  --secondary-color-text: #000;
-
-  --color-list-label: #c8c8c8;
-  --background-list-list: rgba(230, 230, 230, 0.657);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -38,8 +24,8 @@ body {
   margin: 0;
   padding: 0;
   outline: 0;
-  background: var(--background-color);
-  color: var(--main-color-text);
+  background: #131313;
+  color: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,7 +44,7 @@ button {
 }
 
 a {
-  color: var(--main-color-text);
+  color: #FFF;
   text-decoration: none;
 }
 

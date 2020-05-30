@@ -27,7 +27,7 @@ export default function SingleProduct({ product }) {
       dispatch(actionsCart.addProductFailure());
     else {
       dispatch(actionsCart.addProduct(item));
-      dispatch(actionsToast.addToast('Adicionado ao carrinho', false));
+      dispatch(actionsToast.addToast('Adicionado à sacola', false));
     }
   }
 
@@ -61,7 +61,7 @@ export default function SingleProduct({ product }) {
                 </button>
               )
             )}
-            {sizeError && <p style={{ color: 'red' }}>Selecione um tamanho</p>}
+            {sizeError && <p className='error'>Selecione um tamanho</p>}
           </div>
         </div>
 

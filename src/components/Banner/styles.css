@@ -1,7 +1,6 @@
 .banner {
   width: 100%;
   min-height: 85vh;
-  /* background: #000; */
   background: #000 url('../../assets/large.jpg') no-repeat;
   background-size: cover;
   display: flex;
@@ -15,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: blink 0.4s infinite alternate;
+  animation: blink 0.5s infinite alternate;
 }
 
 .banner__title {
@@ -32,10 +31,10 @@
 
 @keyframes blink {
   0% {
-    color: rgb(253, 183, 91);
+    color: rgba(255, 51, 0, 0.651);
   }
   100% {
-    color: var(--background-secondary);
+    color: rgb(255, 60, 0);
   }
 }
 

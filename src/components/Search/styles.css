@@ -33,16 +33,16 @@
   padding-left: 15px;
   width: 80%;
   height: 45px;
-  color: var(--main-color-text);
+  color: #FFF;
   border: 1px solid rgb(39, 39, 39);
-  background: var(--background-color);
+  background: #131313;
 }
 
 .search__btn-submit {
   width: 50px;
   height: 45px;
   color: #FFF;
-  background: var(--background-color);
+  background: #131313;
 }
 
 .search__products {

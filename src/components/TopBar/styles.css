@@ -6,7 +6,7 @@
   height: 65px;
   padding: 0 50px;
   margin: 0;
-  background-color: var(--background-bar);
+  background-color: #000;
 }
 
 .topbar-container h3 {

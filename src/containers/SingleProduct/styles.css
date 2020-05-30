@@ -31,7 +31,7 @@
   font-weight: 400;
   font-size: 14px;
   text-decoration: line-through;
-  color: var(--color-list-label);
+  color: #c8c8c8;
 }
 
 .info__price .price__actual {
@@ -48,14 +48,20 @@
   margin: 12px 0;
 }
 
+.product__size .error {
+  font-size: 14px;
+  color: rgb(223, 4, 4);
+  margin: 10px 0;
+}
+
 .product__size .size__btn {
-  background: var(--background-color);
+  background: #131313;
   width: 30px;
   height: 30px;
   margin-right: 5px;
   border-radius: 100%;
   border: 1px solid #FFF;
-  color: var(--main-color-text);
+  color: #FFF;
   box-shadow: 2px 2px 2px #1d1d1d;
 }
 
@@ -71,8 +77,8 @@
   border-radius: 2px;
   margin-top: 20px;
   font-weight: 500;
-  color: var(--main-color-text);
-  background: var(--background-button);
+  color: #FFF;
+  background: #F84810;
   transition: opacity 0.2s;
 }
 
