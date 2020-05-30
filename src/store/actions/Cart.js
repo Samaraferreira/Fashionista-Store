@@ -26,6 +26,9 @@ const actions = {
     type: actionsTypes.REMOVE_PRODUCT,
     payload: sku
   }),
+  cleanCart: () => ({
+    type: actionsTypes.CLEAN_CART,
+  }),
 }
 
 // "quantitySelected": 2,

@@ -13,20 +13,16 @@ const reducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionsTypes.CART_REQUEST:
       return { ...state };
-
     case actionsTypes.SELECT_SIZE_PRODUCT:
       return { ...state, error: false };
-
     case actionsTypes.ADD_PRODUCT:
       const newList = checkSize(state, action);
       const count = countQuantity(newList);
       state.cart = { 'counter': count, 'items': newList};
       StorageService.set('CartList', state.cart);
       return { ...state, counter: count, items: newList, error: false };
-
     case actionsTypes.ADD_PRODUCT_FAILURE:
       return { ...state, error: true };
-
     case actionsTypes.INCREMENT_QUANTITY_PRODUCT:
       const incrementItems = state.items.map(item => {
           if(item.selectedSize === action.payload) 
@@ -37,7 +33,6 @@ const reducers = (state = INITIAL_STATE, action) => {
       state.cart = { 'counter': incrementCount, 'items': incrementItems};
       StorageService.set('CartList', state.cart);
       return { ...state, counter: incrementCount, items: incrementItems, error: false };
-    
     case actionsTypes.DECREMENT_QUANTITY_PRODUCT:
       const decrementItems = state.items.map(item => {
           if(item.selectedSize === action.payload && item.quantity > 1) 
@@ -48,14 +43,16 @@ const reducers = (state = INITIAL_STATE, action) => {
       state.cart = { 'counter': decrementCount, 'items': decrementItems};
       StorageService.set('CartList', state.cart);
       return { ...state, counter: decrementCount, items: decrementItems, error: false };
-
     case actionsTypes.REMOVE_PRODUCT:
       const updatedList = state.items.filter(item => item.selectedSize !== action.payload)
       const updatedCounter = countQuantity(updatedList)
       state.cart = { 'counter': updatedCounter, 'items': updatedList}
       StorageService.set('CartList', state.cart)
       return { ...state, counter: updatedCounter, items: updatedList, error: false  };
-
+    case actionsTypes.CLEAN_CART:
+      state.cart = { 'counter': 0, 'items': []}
+      StorageService.set('CartList', state.cart)
+      return { ...state, counter: 0, items: [], error: false };
     default:
       return state;
   }
