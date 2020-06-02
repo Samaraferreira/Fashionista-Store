@@ -1,6 +1,7 @@
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.383), rgba(0, 0, 0, 0.253)), url('../../assets/background-banner.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.383), rgba(0, 0, 0, 0.253)), url('../../assets/background.jpg');
   min-height: 95vh;
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,29 +39,5 @@
   }
   100% {
     color: rgb(255, 60, 0);
-  }
-}
-
-@media (max-width: 728px) {
-  .banner {
-    min-height: 60vh;
-  }
-} 
-
-@media (max-width: 1000px) {
-  .banner {
-    min-height: 80vh;
-  }
-}
-
-@media (max-width: 730px) {
-  .banner {
-    min-height: 65vh;
-  }
-}
-
-@media (max-width: 500px) {
-  .banner {
-    min-height: 60vh;
   }
 }
