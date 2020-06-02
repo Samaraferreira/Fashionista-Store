@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import actionsCart from '../../store/actions/Cart';
 
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export default function CartItem({ product }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function increment(sku) {
-    dispatch(actionsCart.incrementQuantityProduct(sku))
+    dispatch(actionsCart.incrementQuantityProduct(sku));
   }
 
   function decrement(sku) {
-    dispatch(actionsCart.decrementQuantityProduct(sku))
+    dispatch(actionsCart.decrementQuantityProduct(sku));
   }
 
   function removeProduct(sku) {
@@ -29,7 +29,10 @@ export default function CartItem({ product }) {
   return (
     <li className='cart-item'>
       <Link to={`/product/${product.id}`}>
-        <img className='cart-item__image' src={product.image} />
+        {product.image 
+          ? <img className='cart-item__image' src={product.image} alt={product.name} />
+          : <img className='cart-item__image' src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt={product.name} />
+        }
       </Link>
 
       <div className='cart-item__infos'>
@@ -50,5 +53,5 @@ export default function CartItem({ product }) {
         <AiOutlineCloseCircle size={24} color='#fff' />
       </button>
     </li>
-  )
-}
+  );
+};

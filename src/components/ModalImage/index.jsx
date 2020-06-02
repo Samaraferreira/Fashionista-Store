@@ -8,9 +8,9 @@ export default function ModalImage({ url, show, setShow }) {
 
   function closeModal() {
     if(show) 
-      setShow(false)
+      setShow(false);
     else
-      setShow(true)
+      setShow(true);
   } 
 
   return (
@@ -31,5 +31,5 @@ export default function ModalImage({ url, show, setShow }) {
         </Drawer>
       }
     </>
-  )
-}
+  );
+};

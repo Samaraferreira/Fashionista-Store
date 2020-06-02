@@ -7,5 +7,5 @@ export default function Drawer(props) {
     <div className='drawer'>
       {props.children}
     </div>
-  )
-}
+  );
+};

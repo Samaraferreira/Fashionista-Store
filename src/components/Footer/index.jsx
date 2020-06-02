@@ -10,7 +10,6 @@ export default function Footer() {
       <h5 className='footer__text'>Desenvolvido por Samara Ferreira</h5>
 
       <div>
-        {/* colocar repositorio */}
         <a href='https://github.com/Samaraferreira/Fashionista-Store' target='_blank'>
           <AiOutlineGithub size={24} />
         </a>
@@ -21,5 +20,5 @@ export default function Footer() {
       </div>
       
     </section>
-  )
-}
+  );
+};

@@ -5,7 +5,7 @@ import { AiOutlineCheckCircle } from 'react-icons/ai';
 import actions from '../../store/actions/Toast';
 import './styles.css';
 
-function Toast() {
+export default function Toast() {
   const dispatch = useDispatch();
   const visible = useSelector(state => state.toastReducer.visible);
   const message = useSelector(state => state.toastReducer.message);
@@ -13,13 +13,13 @@ function Toast() {
   
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(actions.removeToast())
+      dispatch(actions.removeToast());
     }, 1800);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [visible])
+  }, [visible]);
 
   return (
     <>
@@ -39,6 +39,5 @@ function Toast() {
       }
     </>
   );
-}
+};
 
-export default Toast;

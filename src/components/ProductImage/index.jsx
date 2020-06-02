@@ -14,5 +14,5 @@ export default function ProductImage({ url }) {
         {url ? <img src={url} alt='Foto do produto' /> : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt='Foto do produto' />}
       </div>
     </>
-  )
-}
+  );
+};

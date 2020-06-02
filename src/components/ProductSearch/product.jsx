@@ -18,5 +18,5 @@ export default function ProductSearch({ product }) {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-export default function NavBar() {
+export default function Loading() {
   return (
     <div className='ellipsis'>
       <div></div>
@@ -10,5 +10,5 @@ export default function NavBar() {
       <div></div>
       <div></div>
     </div>
-  )
-}
+  );
+};

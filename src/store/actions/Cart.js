@@ -31,7 +31,4 @@ const actions = {
   }),
 }
 
-// "quantitySelected": 2,
-// "sizeSelected": "P",
-
 export default actions;

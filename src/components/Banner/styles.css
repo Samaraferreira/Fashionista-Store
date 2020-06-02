@@ -1,8 +1,10 @@
 .banner {
-  width: 100%;
-  min-height: 85vh;
-  background: #000 url('../../assets/large.jpg') no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/background-banner.jpg');
+  min-height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +42,24 @@
 
 @media (max-width: 728px) {
   .banner {
-    min-height: 50vh;
-    background-image: url('../../assets/medium.jpg');
+    min-height: 60vh;
+  }
+} 
+
+@media (max-width: 1000px) {
+  .banner {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 730px) {
+  .banner {
+    min-height: 65vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner {
+    min-height: 60vh;
   }
 }

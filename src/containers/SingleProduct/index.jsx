@@ -12,20 +12,23 @@ import './styles.css'
 
 export default function SingleProduct({ product }) {
   const dispatch = useDispatch();
-  const [selectedSize, setSelectedSize] = useState('')
-  const sizeError = useSelector(state => state.cartReducer.error)
+  const [selectedSize, setSelectedSize] = useState('');
+  const [error, setError] = useState(false);
+  // const sizeError = useSelector(state => state.cartReducer.error)
 
   function onClickSize(event, sku) {
     event.preventDefault();
-    dispatch(actionsCart.selectSize())
+    dispatch(actionsCart.selectSize());
     setSelectedSize(sku);
   }
 
   function onClickAdd(product) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 };
-    if(selectedSize === '')
-      dispatch(actionsCart.addProductFailure());
-    else {
+    if(selectedSize === '') {
+      // dispatch(actionsCart.addProductFailure());
+      setError(true);
+    } else {
+      setError(false);
       dispatch(actionsCart.addProduct(item));
       dispatch(actionsToast.addToast('Adicionado à sacola', false));
     }
@@ -61,7 +64,7 @@ export default function SingleProduct({ product }) {
                 </button>
               )
             )}
-            {sizeError && <p className='error'>Selecione um tamanho</p>}
+            {error && <p className='error'>Selecione um tamanho</p>}
           </div>
         </div>
 
@@ -76,5 +79,5 @@ export default function SingleProduct({ product }) {
       </div>
       <Toast />
     </div>
-  )
-}
+  );
+};
