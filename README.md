@@ -1,11 +1,10 @@
 # Fashionista E-commerce
 
-### Demo (em desenvolvimento)
+### Demo
 #### https://fashionistastore.netlify.app/
 
 ### Tópicos
 - **ReactJS**
 - **Redux**
-- **Jest**
 - **Fetch API**
 - **BEM CSS**
