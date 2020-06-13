@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ export default function SingleProduct({ product }) {
   const dispatch = useDispatch();
   const [selectedSize, setSelectedSize] = useState('');
   const [error, setError] = useState(false);
-  // const sizeError = useSelector(state => state.cartReducer.error)
 
   function onClickSize(event, sku) {
     event.preventDefault();
@@ -25,7 +24,6 @@ export default function SingleProduct({ product }) {
   function onClickAdd(product) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 };
     if(selectedSize === '') {
-      // dispatch(actionsCart.addProductFailure());
       setError(true);
     } else {
       setError(false);
