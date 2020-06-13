@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 
 import actions from '../../store/actions/Toast';
 import './styles.css';
@@ -27,7 +27,7 @@ export default function Toast() {
         <div className='toast toast--hover' style={{ background: `${ error ? '#FF4500' : '#268B07'}`}}>
           {error
             ? <div className='toast__content'>
-                <AiOutlineCheckCircle size={18} color='#FFF' /> 
+                <AiOutlineCloseCircle size={18} color='#FFF' /> 
                 <label className='message'>{message}</label>
               </div>
             : <div className='toast__content'>
