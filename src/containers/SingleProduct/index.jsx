@@ -15,13 +15,13 @@ export default function SingleProduct({ product }) {
   const [selectedSize, setSelectedSize] = useState('');
   const [error, setError] = useState(false);
 
-  function onClickSize(event, sku) {
+  function handleSelectSize(event, sku) {
     event.preventDefault();
     dispatch(actionsCart.selectSize());
     setSelectedSize(sku);
   }
 
-  function onClickAdd(product) {
+  function handleAddProduct(product) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 };
     if(selectedSize === '') {
       setError(true);
@@ -56,7 +56,7 @@ export default function SingleProduct({ product }) {
                 <button 
                   key={size.sku}
                   className={`size__btn ${selectedSize === size.sku ? 'size__btn--selected' : ''}`}
-                  onClick={(event) => onClickSize(event, size.sku)}
+                  onClick={(event) => handleSelectSize(event, size.sku)}
                 >
                   {size.size}
                 </button>
@@ -66,13 +66,13 @@ export default function SingleProduct({ product }) {
           </div>
         </div>
 
-        <button className='btn-submit btn-submit--hover' onClick={() => onClickAdd(product)}>
+        <button className='btn-submit btn-submit--hover' onClick={() => handleAddProduct(product)}>
           Adicionar à Sacola
         </button>
 
         <Link to='/' className='link-back link-back--hover'>
           <BsArrowLeft size={24} />
-          Voltar para a home
+          Voltar para home
         </Link>
       </div>
       <Toast />
